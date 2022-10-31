@@ -3,7 +3,6 @@ import random
 import altair as alt
 import numpy as np
 import pandas as pd
-from vega_datasets import data
 
 st.header('Homework 1')
 
@@ -114,7 +113,8 @@ The 2 changes I made (to https://altair-viz.github.io/gallery/area_chart_gradien
 
 
 
-source = data.stocks()
+
+source = pd.read_csv('vega_dataset.csv')
 
 areachart1 = alt.Chart(source).transform_filter(
     'datum.symbol==="GOOG"'
